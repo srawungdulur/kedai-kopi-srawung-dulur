@@ -35,9 +35,6 @@ if (orderForm) {
     e.preventDefault();
 
     const nama = document.getElementById("nama")?.value.trim() || "-";
-    const phone = document.getElementById("phone")?.value.trim() || "-";
-    const menu = document.getElementById("menuInput")?.value.trim() || "-";
-    const jumlah = document.getElementById("jumlah")?.value.trim() || "-";
     const meja = document.getElementById("meja")?.value.trim() || "-";
     const catatan = document.getElementById("catatan")?.value.trim() || "-";
     const nomor = "6285336021102";
@@ -45,9 +42,6 @@ if (orderForm) {
     const pesan =
       "Halo Srawung Dulur,\n\n" +
       `Nama: ${nama}\n` +
-      `No. WhatsApp: ${phone}\n` +
-      `Pesanan: ${menu}\n` +
-      `Jumlah: ${jumlah}\n` +
       `Meja: ${meja}\n` +
       `Catatan: ${catatan}`;
 
