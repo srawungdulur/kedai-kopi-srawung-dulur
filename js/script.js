@@ -34,16 +34,27 @@ if (orderForm) {
   orderForm.addEventListener("submit", function (e) {
     e.preventDefault();
 
+    const toBulletList = (value) => {
+      const lines = (value || "")
+        .split(/\r?\n/)
+        .map((line) => line.trim())
+        .filter((line) => line.length > 0);
+
+      if (lines.length === 0) return "-";
+      return lines.map((line) => `• ${line}`).join("\n");
+    };
+
     const nama = document.getElementById("nama")?.value.trim() || "-";
     const meja = document.getElementById("meja")?.value.trim() || "-";
     const catatan = document.getElementById("catatan")?.value.trim() || "-";
+    const catatanList = toBulletList(catatan);
     const nomor = "6285336021102";
 
     const pesan =
       "Halo Srawung Dulur,\n\n" +
       `Nama: ${nama}\n` +
       `Meja: ${meja}\n` +
-      `Catatan: ${catatan}`;
+      `Pesanan:\n${catatanList}`;
 
     window.open(`https://wa.me/${nomor}?text=${encodeURIComponent(pesan)}`, "_blank");
   });

@@ -409,6 +409,7 @@ footer {
 .input-group textarea {
     height: 120px;
     resize: vertical;
+    font-size: 1.7rem;
 }
 
 .order button {
