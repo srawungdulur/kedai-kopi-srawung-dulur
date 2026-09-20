@@ -310,23 +310,50 @@ footer {
   font-weight: 200;
   line-height: 1.6;
 }
-.menu .row {
+.menu .menu-list {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.2rem 2rem;
+  max-width: 80rem;
+  margin: 3rem auto 0;
+  padding: 0 2rem;
+  list-style: none;
+}
+
+.menu .menu-list + h2,
+.menu .menu-list + .menu-list + h2,
+.menu .menu-list + .menu-list + .menu-list + h2 {
+  margin-top: 4rem;
+}
+
+.menu .menu-list .menu-card {
   display: flex;
-  flex-wrap: wrap;
-  margin-top: 5rem;
-  justify-content: center;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  padding: 1.2rem 1.5rem;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 1rem;
+  background: rgba(255, 255, 255, 0.02);
 }
-.menu .row .menu-card {
-  text-align: center;
-  padding-bottom: 3rem;
-  padding: 1rem;
+
+.menu .menu-list .menu-card .menu-card-title {
+  font-size: 1.5rem;
+  color: #fff;
 }
-.menu .row .menu-card img {
-  border-radius: 50%;
-  /* smaller default size for menu images */
-  width: 150px;
-  height: 150px;
-  object-fit: cover;
+
+.menu .menu-list .menu-card .menu-card-price {
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: var(--primary);
+  white-space: nowrap;
+}
+
+@media (max-width: 600px) {
+  .menu .menu-list {
+    grid-template-columns: 1fr;
+    padding: 0 1rem;
+  }
 }
 
 /* FORM */
