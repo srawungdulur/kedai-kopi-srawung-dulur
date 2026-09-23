@@ -2,6 +2,16 @@
 const navbarNav = document.querySelector(".navbar-nav");
 const hamburger = document.querySelector("#hamburger-menu");
 
+if (navbarNav) {
+  const currentPage = window.location.pathname.split("/").pop() || "index.html";
+
+  navbarNav.querySelectorAll("a").forEach((link) => {
+    if (link.getAttribute("href") === currentPage) {
+      link.classList.add("active");
+    }
+  });
+}
+
 if (hamburger && navbarNav) {
   hamburger.onclick = () => {
     navbarNav.classList.toggle("active");
@@ -25,6 +35,36 @@ if (searchButton && searchForm && searchBox) {
     searchBox.focus();
     e.preventDefault();
   };
+}
+
+// pilih menu untuk mengisi pesan
+const menuCards = document.querySelectorAll(".menu-card");
+const catatanInput = document.getElementById("catatan");
+
+if (menuCards.length > 0 && catatanInput) {
+  const addMenuToOrder = (card) => {
+    const menuTitle = card.querySelector(".menu-card-title")?.textContent.trim();
+
+    if (!menuTitle) return;
+
+    catatanInput.value = catatanInput.value.trim()
+      ? `${catatanInput.value.trim()}\n${menuTitle}`
+      : menuTitle;
+    catatanInput.focus();
+  };
+
+  menuCards.forEach((card) => {
+    card.setAttribute("role", "button");
+    card.setAttribute("tabindex", "0");
+
+    card.addEventListener("click", () => addMenuToOrder(card));
+    card.addEventListener("keydown", (e) => {
+      if (e.key === "Enter" || e.key === " ") {
+        e.preventDefault();
+        addMenuToOrder(card);
+      }
+    });
+  });
 }
 
 // kirim order form ke WhatsApp
