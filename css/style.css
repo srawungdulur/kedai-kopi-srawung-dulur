@@ -320,6 +320,23 @@ footer {
   list-style: none;
 }
 
+.menu .menu-subtitle {
+  max-width: 80rem;
+  margin: 2.5rem auto 0;
+  padding: 0 2rem;
+  color: var(--primary);
+  font-size: 1.8rem;
+  font-weight: 700;
+}
+
+.menu .menu-subtitle span {
+  color: #fff;
+}
+
+.menu .menu-subtitle + .menu-list {
+  margin-top: 1rem;
+}
+
 .menu .menu-list + h2,
 .menu .menu-list + .menu-list + h2,
 .menu .menu-list + .menu-list + .menu-list + h2 {
@@ -358,9 +375,225 @@ footer {
   white-space: nowrap;
 }
 
+/* reviews */
+.reviews {
+  width: min(100%, 104rem);
+  margin: 0 auto;
+  padding: 11rem 7% 3rem;
+}
+.reviews-heading {
+  max-width: 68rem;
+  margin: 0 auto 3rem;
+  text-align: center;
+}
+.reviews-heading h1 {
+  margin-bottom: 0.8rem;
+  font-size: 3.2rem;
+}
+.reviews-heading h1 span {
+  color: var(--primary);
+}
+.reviews-heading p,
+.reviews-note {
+  color: #c8c1ba;
+  font-size: 1.3rem;
+  line-height: 1.7;
+}
+.reviews-layout {
+  display: grid;
+  grid-template-columns: minmax(28rem, 0.85fr) minmax(0, 1.15fr);
+  gap: 4rem;
+  align-items: start;
+}
+.review-form {
+  padding: 2.4rem;
+  border: 1px solid #5c4127;
+  background: #111;
+}
+.review-form h2,
+.review-list h2 {
+  margin-bottom: 1.8rem;
+  font-size: 2rem;
+}
+.review-field {
+  margin-bottom: 1.7rem;
+}
+.review-field label,
+.review-field legend {
+  display: block;
+  margin-bottom: 0.7rem;
+  color: #fff;
+  font-size: 1.3rem;
+}
+.review-field input[type="text"],
+.review-field textarea {
+  width: 100%;
+  padding: 1.1rem 1.2rem;
+  border: 1px solid #514b44;
+  background: #080808;
+  color: #fff;
+  font: inherit;
+  font-size: 1.3rem;
+}
+.review-field textarea {
+  min-height: 12rem;
+  resize: vertical;
+}
+.review-rating {
+  display: flex;
+  gap: 0.8rem;
+  border: 0;
+}
+.review-rating label {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  margin: 0;
+  cursor: pointer;
+}
+.review-rating input {
+  accent-color: var(--primary);
+}
+.review-upload {
+  display: block;
+  width: 100%;
+  padding: 1.2rem;
+  border: 1px dashed #8a6948;
+  background: #080808;
+  color: #fff;
+  font: inherit;
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+.review-upload-hint {
+  margin-top: 0.6rem;
+  color: #aaa;
+  font-size: 1.1rem;
+}
+.review-preview,
+.review-media {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(10rem, 1fr));
+  gap: 0.8rem;
+  margin-top: 1rem;
+}
+.review-preview img,
+.review-preview video,
+.review-media img,
+.review-media video {
+  display: block;
+  width: 100%;
+  max-height: 20rem;
+  aspect-ratio: 1;
+  border: 1px solid #39332d;
+  background: #080808;
+  object-fit: cover;
+}
+.review-submit {
+  width: 100%;
+  padding: 1.2rem;
+  background: var(--primary);
+  color: #fff;
+  font: inherit;
+  font-size: 1.4rem;
+  font-weight: 700;
+  cursor: pointer;
+}
+.review-submit:hover {
+  background: #9c7048;
+}
+.reviews-note {
+  margin-top: 1.2rem;
+  font-size: 1.1rem;
+}
+.review-list {
+  min-width: 0;
+}
+.review-list-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 1rem;
+  border-bottom: 1px solid #5c4127;
+}
+.review-count {
+  color: #bcb3a9;
+  font-size: 1.2rem;
+}
+.review-items {
+  display: grid;
+  gap: 1.4rem;
+}
+.review-item {
+  padding: 1.8rem 0;
+  border-bottom: 1px solid #332a21;
+}
+.review-item-header {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  align-items: start;
+}
+.review-item h3 {
+  font-size: 1.5rem;
+}
+.review-item time {
+  color: #aaa;
+  font-size: 1.1rem;
+  white-space: nowrap;
+}
+.review-stars {
+  margin: 0.4rem 0 0.8rem;
+  color: var(--primary);
+  font-size: 1.3rem;
+}
+.review-item p {
+  color: #e2ddd7;
+  font-size: 1.3rem;
+  line-height: 1.7;
+  overflow-wrap: anywhere;
+}
+.review-delete {
+  margin-top: 1rem;
+  padding: 0.6rem 0;
+  background: none;
+  color: #d7a07c;
+  font: inherit;
+  font-size: 1.1rem;
+  cursor: pointer;
+}
+.review-delete:hover {
+  color: #fff;
+}
+.review-empty,
+.review-status {
+  color: #c8c1ba;
+  font-size: 1.3rem;
+  line-height: 1.6;
+}
+.review-status {
+  min-height: 2rem;
+  margin-bottom: 1rem;
+}
+
+@media (max-width: 700px) {
+  .reviews-layout {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+  .reviews {
+    padding-right: 5%;
+    padding-left: 5%;
+  }
+}
+
 @media (max-width: 600px) {
   .menu .menu-list {
     grid-template-columns: 1fr;
+    padding: 0 1rem;
+  }
+
+  .menu .menu-subtitle {
     padding: 0 1rem;
   }
 }
@@ -570,7 +803,7 @@ footer .credit a {
     position: absolute;
     top: 100%;
     right: -100%;
-    background-color: var(--primary);
+    background-color: #fff;
     width: 30rem;
     height: auto;
     padding: 0.5rem 0;
@@ -584,7 +817,9 @@ footer .credit a {
     display: block;
     margin: 1.5rem;
     padding: 0.5rem;
-    font: size 2rem;
+    font-size: 2rem;
+    font-weight: 700;
+    text-transform: capitalize;
   }
   .navbar .navbar-nav a:active {
     position: relative;

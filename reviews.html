@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ulasan - Srawung Dulur</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,300;0,400;0,700;1,700&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://unpkg.com/feather-icons"></script>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <nav class="navbar">
+      <a href="index.html" class="navbar-logo">Srawung<span> Dulur</span>.</a>
+      <div class="navbar-nav">
+        <a href="index.html">home</a>
+        <a href="menu.html">menu</a>
+        <a href="about.html">tentang kami</a>
+        <a href="reviews.html">ulasan</a>
+      </div>
+      <div class="navbar-extra">
+        <a href="#" id="search-button" aria-label="Cari"><i data-feather="search"></i></a>
+        <a href="shop.html#shop" id="shopping-cart" aria-label="Keranjang"><i data-feather="shopping-cart"></i></a>
+        <a href="#" id="hamburger-menu" aria-label="Buka navigasi"><i data-feather="menu"></i></a>
+      </div>
+      <div class="search-form">
+        <input type="search" placeholder="Cari kopi favoritmu..." id="search-box" />
+        <label for="search-box"><i data-feather="search"></i></label>
+      </div>
+    </nav>
+
+    <main class="reviews">
+      <header class="reviews-heading">
+        <h1>Cerita <span>Dulur</span></h1>
+        <p>Bagikan pengalamanmu menikmati hidangan dan suasana Srawung Dulur.</p>
+      </header>
+
+      <div class="reviews-layout">
+        <form class="review-form" id="reviewForm">
+          <h2>Tulis ulasan</h2>
+          <p class="review-status" id="review-status" role="status" aria-live="polite"></p>
+
+          <div class="review-field">
+            <label for="review-name">Nama</label>
+            <input type="text" id="review-name" name="name" maxlength="60" autocomplete="name" required />
+          </div>
+
+          <fieldset class="review-field review-rating">
+            <legend>Penilaian</legend>
+            <label><input type="radio" name="rating" value="1" required /> 1</label>
+            <label><input type="radio" name="rating" value="2" /> 2</label>
+            <label><input type="radio" name="rating" value="3" /> 3</label>
+            <label><input type="radio" name="rating" value="4" /> 4</label>
+            <label><input type="radio" name="rating" value="5" /> 5</label>
+          </fieldset>
+
+          <div class="review-field">
+            <label for="review-comment">Ceritakan pengalamanmu</label>
+            <textarea id="review-comment" name="comment" maxlength="1000" required></textarea>
+          </div>
+
+          <div class="review-field">
+            <label for="review-media-input">Foto atau video</label>
+            <input class="review-upload" type="file" id="review-media-input" accept="image/*,video/*" multiple />
+            <p class="review-upload-hint">Maksimal 4 file, masing-masing hingga 15 MB.</p>
+            <div class="review-preview" id="review-preview" aria-label="Pratinjau media pilihan"></div>
+          </div>
+
+          <button class="review-submit" type="submit">Kirim ulasan</button>
+          <p class="reviews-note">Ulasan dan media tersimpan di browser/perangkat ini saja. Agar dapat dilihat semua pengunjung, situs memerlukan server penyimpanan.</p>
+        </form>
+
+        <section class="review-list" aria-labelledby="review-list-title">
+          <div class="review-list-heading">
+            <h2 id="review-list-title">Ulasan pengunjung</h2>
+            <span class="review-count" id="review-count">0 ulasan</span>
+          </div>
+          <div class="review-items" id="review-items"></div>
+        </section>
+      </div>
+    </main>
+
+    <footer>
+      <div class="links">
+        <a href="index.html">home</a>
+        <a href="menu.html">menu</a>
+        <a href="about.html">tentang kami</a>
+        <a href="reviews.html">ulasan</a>
+      </div>
+      <div class="credit"><p>Created by <a href="">El-Huseini90</a>. | &copy; 2026.</p></div>
+    </footer>
+
+    <script>feather.replace();</script>
+    <script src="js/script.js"></script>
+  </body>
+</html>
